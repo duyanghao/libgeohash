@@ -42,3 +42,7 @@ below with each box representing the index of the array.
 + 7 0 1
 + 6 * 2
 + 5 4 3
+
+### Refs
+* [Go GeoHash Library](https://github.com/mmcloughlin/geohash/tree/master)
+* [Objective-C GeoHash Library](https://github.com/lyokato/objc-geohash)

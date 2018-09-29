@@ -56,7 +56,7 @@ typedef struct IntervalStruct {
 
 
 /* Normal 32 characer map used for geohashing */
-static char char_map[32] =  "0123456789bcdefghjkmnpqrstuvwxyz";
+static char char_map[33] =  "0123456789bcdefghjkmnpqrstuvwxyz";
 
 /*
  *  The follow character maps were created by Dave Troy and used in his Javascript Geohashing
@@ -105,7 +105,7 @@ char* get_neighbor(char *hash, int direction) {
     char **border = is_odd ? odd_borders : even_borders;
     char **neighbor = is_odd ? odd_neighbors : even_neighbors; 
     
-    char *base = malloc(sizeof(char) * 1);
+    char *base = (char *)malloc(sizeof(char) * 1);
     base[0] = '\0';
     strncat(base, hash, hash_length - 1);
     
@@ -115,7 +115,7 @@ char* get_neighbor(char *hash, int direction) {
     int neighbor_index = index_for_char(last_char, neighbor[direction]);
     last_char = char_map[neighbor_index];
         
-    char *last_hash = malloc(sizeof(char) * 2);
+    char *last_hash = (char *)malloc(sizeof(char) * 2);
     last_hash[0] = last_char;
     last_hash[1] = '\0';
     strcat(base, last_hash);
@@ -186,7 +186,7 @@ char* geohash_encode(double lat, double lng, int precision) {
     return hash;
 }
 
-GeoCoord geohash_decode(char *hash) {
+GeoCoord geohash_decode(const char *hash) {
     
     GeoCoord coordinate = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     

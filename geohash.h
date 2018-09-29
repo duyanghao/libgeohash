@@ -60,7 +60,7 @@ extern char* geohash_encode(double lat, double lng, int precision);
  * Returns the latitude and longitude used to create the hash along with
  * the bounding box for the encoded coordinate.
  */
-extern GeoCoord geohash_decode(char* hash);
+extern GeoCoord geohash_decode(const char* hash);
 
 /* 
  * Return an array of geohashes that represent the neighbors of the passed
