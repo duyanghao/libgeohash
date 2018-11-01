@@ -43,6 +43,10 @@ below with each box representing the index of the array.
 + 6 * 2
 + 5 4 3
 
+### Uses
+
+We can use this library to generate a geohash cache system. For a more detailed description of geohash cache system, refer to this [document](https://duyanghao.github.io/geohash/).
+
 ### Refs
 * [Go GeoHash Library](https://github.com/mmcloughlin/geohash/tree/master)
 * [Objective-C GeoHash Library](https://github.com/lyokato/objc-geohash)
